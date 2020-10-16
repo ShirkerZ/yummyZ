@@ -1,0 +1,86 @@
+.nutrition {
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    position: relative;
+    z-index: 1;
+    .container {
+        grid-column: 2/3;
+        .nutrition-title {
+            text-align: left;
+            color: #206A5D;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nutrient-type {
+            background: #BFDCAE;
+            border-radius: 50px;
+            width: 180px;
+            height: 70px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            font-family: 'Montserrat', sans-serif;
+            margin: 1rem 0;
+            .amount {
+                grid-column: 1/2;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .circle {
+                    background: white;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1rem;
+                    padding: .3rem;
+                }
+            }
+            .nutrient {
+                grid-column: 2/3;
+                height: 70px;
+                margin-top: .5rem;
+                h3,
+                p {
+                    text-align: left;
+                    margin: .3rem 0;
+                    font-weight: normal;
+                }
+                p {
+                    font-size: .8rem;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width:768px) {
+    .nutrition {
+        .container {
+            .nutrition-title {
+                margin: 2rem 0;
+            }
+            .nutrient-type {
+                width: 220px;
+                margin: 2rem 0;
+                .amount {
+                    .circle {
+                        height: 45px;
+                        width: 45px;
+                        font-size: 1.2rem;
+                    }
+                }
+                .nutrient {
+                    h3 {
+                        font-size: 1.3rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

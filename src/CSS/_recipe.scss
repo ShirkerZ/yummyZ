@@ -1,0 +1,23 @@
+.recipe {
+    background: rgba(191, 220, 174, 0.5);
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    padding: 1rem 0;
+    padding-bottom: 3rem;
+    .container {
+        grid-column: 2/3;
+        .recipe-title {
+            text-align: left;
+            color: #206A5D;
+            font-family: 'Montserrat', sans-serif;
+        }
+        p {
+            font-family: 'Nunito', sans-serif;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+    }
+}

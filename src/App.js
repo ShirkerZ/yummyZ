@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState} from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./CSS/App.css";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Cuisines from "./components/Cuisines";
+import Details from "./components/Details";
 
 function App() {
+
+  const cardStyle = {
+    textDecoration: "none",
+  };
+
+  const [foods, setFoods] = useState([]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+
+        <Switch>
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <Home
+                  {...props}
+                  setFoods={setFoods}
+                  foods={foods}
+                  cardStyle={cardStyle}
+                />
+              )}
+            />
+            <Route
+              path="/cuisine"
+              exact
+              render={(props) => (
+                <Cuisines
+                  {...props}
+                  setFoods={setFoods}
+                  foods={foods}
+                  cardStyle={cardStyle}
+                />
+              )}
+            />
+            <Route path="/:id" component={Details} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

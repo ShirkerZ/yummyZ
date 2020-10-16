@@ -1,0 +1,160 @@
+nav {
+    background: #81B214;
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    position: relative;
+    z-index: 10;
+    .container {
+        width: 100%;
+        grid-column: 2/3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        font-family: 'Montserrat', sans-serif;
+        .logo {
+            color: white;
+            font-size: 2rem;
+        }
+        ul {
+            display: none;
+            li {
+                text-decoration: none;
+            }
+        }
+        .cross {
+            .rec {
+                width: 40px;
+                height: 3px;
+                //margin: .1rem;
+                background: white;
+            }
+            .a {
+                transform: translateY(-250%);
+            }
+            .c {
+                transform: translateY(250%);
+            }
+        }
+    }
+    .mobile-nav {
+        height: 100vh;
+        width: 0%;
+        overflow: hidden;
+        background: #206A5D;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        ul {
+            position: relative;
+            top: -10vh;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            li {
+                font-size: 1.7rem;
+                font-weight: lighter;
+                margin: 1rem 0;
+                .link {
+                    position: relative;
+                    color: white;
+                    padding: .5rem 1rem;
+                    z-index: 0;
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 0;
+                        height: 100%;
+                        width: 50%;
+                        background: #97c436;
+                        transform: skew(-30deg);
+                        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                    &::before {
+                        left: 50%;
+                    }
+                    &::after {
+                        left: 0;
+                    }
+                    &:hover::before,
+                    &:hover:after {
+                        transform: skew(30deg);
+                    }
+                    &:hover::before {
+                        background-color: #206A5D;
+                        top: -.5rem;
+                        left: 0;
+                    }
+                    &:hover::after {
+                        background-color: #BFDCAE;
+                        top: .5rem;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width:1100px) {
+    nav {
+        .logo {
+            font-size: 2.5rem;
+        }
+        ul {
+            width: 30%;
+            display: flex !important;
+            justify-content: space-around;
+            list-style: none;
+            li {
+                font-size: 1.5rem;
+                .link {
+                    position: relative;
+                    color: white;
+                    padding: .5rem 1rem;
+                    z-index: 0;
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 0;
+                        height: 100%;
+                        width: 50%;
+                        background: #97c436;
+                        transform: skew(-30deg);
+                        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                    &::before {
+                        left: 50%;
+                    }
+                    &::after {
+                        left: 0;
+                    }
+                    &:hover::before,
+                    &:hover:after {
+                        transform: skew(30deg);
+                    }
+                    &:hover::before {
+                        background-color: #206A5D;
+                        top: -.5rem;
+                        left: 0;
+                    }
+                    &:hover::after {
+                        background-color: #BFDCAE;
+                        top: .5rem;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+        .cross {
+            display: none;
+        }
+    }
+}

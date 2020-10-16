@@ -1,0 +1,988 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap");
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito', sans-serif;
+*/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.App {
+  text-align: center;
+  background: #f5f5f5;
+}
+
+nav {
+  background: #81B214;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  position: relative;
+  z-index: 10;
+}
+
+nav .container {
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav .container .logo {
+  color: white;
+  font-size: 2rem;
+}
+
+nav .container ul {
+  display: none;
+}
+
+nav .container ul li {
+  text-decoration: none;
+}
+
+nav .container .cross .rec {
+  width: 40px;
+  height: 3px;
+  background: white;
+}
+
+nav .container .cross .a {
+  -webkit-transform: translateY(-250%);
+          transform: translateY(-250%);
+}
+
+nav .container .cross .c {
+  -webkit-transform: translateY(250%);
+          transform: translateY(250%);
+}
+
+nav .mobile-nav {
+  height: 100vh;
+  width: 0%;
+  overflow: hidden;
+  background: #206A5D;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+}
+
+nav .mobile-nav ul {
+  position: relative;
+  top: -10vh;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+nav .mobile-nav ul li {
+  font-size: 1.7rem;
+  font-weight: lighter;
+  margin: 1rem 0;
+}
+
+nav .mobile-nav ul li .link {
+  position: relative;
+  color: white;
+  padding: .5rem 1rem;
+  z-index: 0;
+}
+
+nav .mobile-nav ul li .link::before, nav .mobile-nav ul li .link::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #97c436;
+  -webkit-transform: skew(-30deg);
+          transform: skew(-30deg);
+  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+nav .mobile-nav ul li .link::before {
+  left: 50%;
+}
+
+nav .mobile-nav ul li .link::after {
+  left: 0;
+}
+
+nav .mobile-nav ul li .link:hover::before, nav .mobile-nav ul li .link:hover:after {
+  -webkit-transform: skew(30deg);
+          transform: skew(30deg);
+}
+
+nav .mobile-nav ul li .link:hover::before {
+  background-color: #206A5D;
+  top: -.5rem;
+  left: 0;
+}
+
+nav .mobile-nav ul li .link:hover::after {
+  background-color: #BFDCAE;
+  top: .5rem;
+  left: 50%;
+}
+
+@media screen and (min-width: 1100px) {
+  nav .logo {
+    font-size: 2.5rem;
+  }
+  nav ul {
+    width: 30%;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    list-style: none;
+  }
+  nav ul li {
+    font-size: 1.5rem;
+  }
+  nav ul li .link {
+    position: relative;
+    color: white;
+    padding: .5rem 1rem;
+    z-index: 0;
+  }
+  nav ul li .link::before, nav ul li .link::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #97c436;
+    -webkit-transform: skew(-30deg);
+            transform: skew(-30deg);
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  nav ul li .link::before {
+    left: 50%;
+  }
+  nav ul li .link::after {
+    left: 0;
+  }
+  nav ul li .link:hover::before, nav ul li .link:hover:after {
+    -webkit-transform: skew(30deg);
+            transform: skew(30deg);
+  }
+  nav ul li .link:hover::before {
+    background-color: #206A5D;
+    top: -.5rem;
+    left: 0;
+  }
+  nav ul li .link:hover::after {
+    background-color: #BFDCAE;
+    top: .5rem;
+    left: 50%;
+  }
+  nav .cross {
+    display: none;
+  }
+}
+
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5vh;
+  margin-top: 1rem;
+}
+
+.form form .input input {
+  background: #BFDCAE;
+  color: #206A5D;
+  border-radius: 8px;
+  padding: .5rem .7rem;
+  outline: none;
+  border: none;
+  margin-right: .2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form form .input button {
+  background: #206A5D;
+  color: white;
+  border-radius: 8px;
+  padding: .5rem .7rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.form form .input button:hover {
+  background: #BFDCAE;
+  color: #206A5D;
+}
+
+@media screen and (min-width: 768px) {
+  .form form {
+    margin-top: 3rem;
+  }
+  .form form .input input,
+  .form form .input button {
+    font-size: 1.5rem;
+    margin-right: .5rem;
+  }
+  .form form .input input {
+    padding: .7rem;
+  }
+  .form form .input button {
+    padding: .7rem 1rem;
+  }
+}
+
+.home {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  overflow: hidden;
+}
+
+.home .container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.home .container .meal-type-container {
+  width: 93vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.home .container .meal-type-container .meal-type-card {
+  position: relative;
+  min-width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  margin: 1rem 1rem 1rem 0;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+  transition: -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+  transition: box-shadow .5s ease, transform .1 ease;
+  transition: box-shadow .5s ease, transform .1 ease, -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+}
+
+.home .container .meal-type-container .meal-type-card:hover .tape {
+  background: rgba(129, 178, 20, 0.7);
+}
+
+.home .container .meal-type-container .meal-type-card img {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+.home .container .meal-type-container .meal-type-card .tape {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  border-radius: 0px 8px 8px 0px;
+  background: rgba(129, 178, 20, 0.5);
+  pointer-events: none;
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
+}
+
+.home .container .meal-type-container .meal-type-card .tape h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  color: white;
+  margin: .7rem 1rem;
+}
+
+.home .container .food-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.home .container .food-container .food-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 340px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.home .container .food-container .food-card img {
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home .container .food-container .food-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .9rem;
+  padding: 0 1rem;
+}
+
+@media only screen and (min-width: 1100px) {
+  .meal-type-container .meal-type-card {
+    min-width: 300px !important;
+    min-height: 500px;
+    margin: 3rem 2rem 3rem 0 !important;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+  }
+  .meal-type-container .meal-type-card:hover {
+    -webkit-transform: skew(-2deg, -2deg);
+            transform: skew(-2deg, -2deg);
+  }
+  .meal-type-container .meal-type-card img {
+    min-width: 350px;
+    min-height: 500px;
+  }
+  .meal-type-container .meal-type-card .tape h3 {
+    font-size: 2rem;
+  }
+  .meal-type-container .food-container .food-card {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    border-radius: 8px;
+    min-width: 200px;
+    min-height: 300px !important;
+    margin: 2rem 0;
+    margin-right: 1rem;
+    overflow: hidden;
+    -webkit-box-shadow: 20px 20px 60px rgba(142, 129, 129, 0.25), -20px -20px 60px rgba(255, 255, 255, 0.25);
+            box-shadow: 20px 20px 60px rgba(142, 129, 129, 0.25), -20px -20px 60px rgba(255, 255, 255, 0.25);
+  }
+  .meal-type-container .food-container .food-card img {
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+  }
+}
+
+.cuisines {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  overflow: hidden;
+}
+
+.cuisines .container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.cuisines .container .cuisine-container {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.cuisines .container .cuisine-container .cuisine-card {
+  position: relative;
+  min-width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  margin: 1rem 1rem 1rem 0;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 3px 20px #a7a7a7;
+          box-shadow: 1px 3px 20px #a7a7a7;
+  -webkit-transition: -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+  transition: -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+  transition: box-shadow .5s ease, transform .1 ease;
+  transition: box-shadow .5s ease, transform .1 ease, -webkit-box-shadow .5s ease, -webkit-transform .1 ease;
+}
+
+.cuisines .container .cuisine-container .cuisine-card:hover {
+  -webkit-box-shadow: 5px 5px 30px #a7a7a7;
+          box-shadow: 5px 5px 30px #a7a7a7;
+}
+
+.cuisines .container .cuisine-container .cuisine-card:hover .tape {
+  background: rgba(32, 106, 93, 0.7);
+}
+
+.cuisines .container .cuisine-container .cuisine-card img {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+.cuisines .container .cuisine-container .cuisine-card .tape {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  border-radius: 0px 8px 8px 0px;
+  background: rgba(32, 106, 93, 0.5);
+  pointer-events: none;
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
+}
+
+.cuisines .container .cuisine-container .cuisine-card .tape h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  color: white;
+  margin: .7rem 1rem;
+}
+
+.cuisines .container .food-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.cuisines .container .food-container .food-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 340px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem;
+  -webkit-box-shadow: 1px 5px 10px rgba(207, 199, 199, 0.25);
+          box-shadow: 1px 5px 10px rgba(207, 199, 199, 0.25);
+}
+
+.cuisines .container .food-container .food-card img {
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cuisines .container .food-container .food-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .cuisine-container .cuisine-card {
+    min-width: 300px !important;
+    min-height: 500px;
+    margin: 3rem 2rem 3rem 0 !important;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+  }
+  .cuisine-container .cuisine-card:hover {
+    -webkit-transform: skew(-2deg, -2deg);
+            transform: skew(-2deg, -2deg);
+  }
+  .cuisine-container .cuisine-card img {
+    min-width: 350px;
+    min-height: 500px;
+  }
+  .cuisine-container .cuisine-card .tape h3 {
+    font-size: 2rem;
+  }
+  .cuisine-container .food-container .food-card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 80px;
+        grid-template-rows: 1fr 80px;
+    border-radius: 8px;
+    min-width: 200px;
+    height: 200px;
+    margin: 1rem 0;
+    margin-right: 1rem;
+    overflow: hidden;
+    -webkit-box-shadow: 20px 20px 60px rgba(142, 129, 129, 0.25), -20px -20px 60px rgba(255, 255, 255, 0.25);
+            box-shadow: 20px 20px 60px rgba(142, 129, 129, 0.25), -20px -20px 60px rgba(255, 255, 255, 0.25);
+  }
+  .cuisine-container .food-container .food-card img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    height: 130px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+  }
+}
+
+.food-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 90vw;
+}
+
+.food-container .food-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 340px;
+  height: 120px;
+  border-radius: 2px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
+}
+
+.food-container .food-card:hover {
+  background: #BFDCAE;
+}
+
+.food-container .food-card img {
+  height: 120px;
+  padding: .3rem;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.food-container .food-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .9rem;
+  padding: 0 1rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+@media screen and (min-width: 1100px) {
+  .food-container {
+    display: -ms-grid !important;
+    display: grid !important;
+    grid-gap: 4rem !important;
+    padding: 4rem 0;
+  }
+  .food-container .food-card {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    min-width: 200px;
+    min-height: 300px;
+    margin: 2rem;
+    margin-right: 3rem;
+  }
+  .food-container .food-card img {
+    height: 200px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+  }
+  .food-container .food-card h3 {
+    font-size: 1.2rem !important;
+    height: 100%;
+  }
+}
+
+.food-details {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.food-details .container .food-name {
+  position: relative;
+  left: 5vw;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 5rem;
+}
+
+.food-details .container .food-image {
+  position: absolute;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 30vh;
+  right: -25vw;
+}
+
+@media screen and (min-width: 768px) {
+  .food-details .container .food-image {
+    min-height: 55vh;
+    min-width: 40vw;
+    border-radius: 8%;
+    top: 15vh;
+    right: 10vw;
+  }
+}
+
+.nutrition {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.nutrition .container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.nutrition .container .nutrition-title {
+  text-align: left;
+  color: #206A5D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nutrition .container .nutrient-type {
+  background: #BFDCAE;
+  border-radius: 50px;
+  width: 180px;
+  height: 70px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 1.2fr;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1rem 0;
+}
+
+.nutrition .container .nutrient-type .amount {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nutrition .container .nutrient-type .amount .circle {
+  background: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  padding: .3rem;
+}
+
+.nutrition .container .nutrient-type .nutrient {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  height: 70px;
+  margin-top: .5rem;
+}
+
+.nutrition .container .nutrient-type .nutrient h3,
+.nutrition .container .nutrient-type .nutrient p {
+  text-align: left;
+  margin: .3rem 0;
+  font-weight: normal;
+}
+
+.nutrition .container .nutrient-type .nutrient p {
+  font-size: .8rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (min-width: 768px) {
+  .nutrition .container .nutrition-title {
+    margin: 2rem 0;
+  }
+  .nutrition .container .nutrient-type {
+    width: 220px;
+    margin: 2rem 0;
+  }
+  .nutrition .container .nutrient-type .amount .circle {
+    height: 45px;
+    width: 45px;
+    font-size: 1.2rem;
+  }
+  .nutrition .container .nutrient-type .nutrient h3 {
+    font-size: 1.3rem;
+  }
+  .nutrition .container .nutrient-type .nutrient p {
+    font-size: 1rem;
+  }
+}
+
+.ingredients {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  overflow: hidden;
+}
+
+.ingredients .container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  overflow: hidden;
+}
+
+.ingredients .container .ingredients-title {
+  text-align: left;
+  color: #206A5D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ingredients .container .ingredients-container {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.ingredients .container .ingredients-container .ingredient-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 80px;
+      grid-template-rows: 1fr 80px;
+  border-radius: 2px;
+  min-width: 200px;
+  height: 200px;
+  margin: 3rem 0;
+  margin-right: 3rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.ingredients .container .ingredients-container .ingredient-card img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  height: 130px;
+  padding: .5rem .5rem 0 .5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .ingredient-info {
+  width: 200px;
+  height: 50px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .info {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .info h3,
+.ingredients .container .ingredients-container .ingredient-card .info p {
+  margin: 0.5rem;
+  min-width: 150px;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .info h3 {
+  font-size: 1rem;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .info p {
+  font-size: .8rem;
+}
+
+.ingredients .container .ingredients-container .ingredient-card .amount {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  height: 80px;
+  position: relative;
+  right: 2vw;
+}
+
+@media screen and (min-width: 768px) {
+  .ingredients .container .ingredients-title {
+    margin: 2rem 0;
+  }
+}
+
+.recipe {
+  background: rgba(191, 220, 174, 0.5);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+}
+
+.recipe .container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.recipe .container .recipe-title {
+  text-align: left;
+  color: #206A5D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.recipe .container p {
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=App.css.map */
