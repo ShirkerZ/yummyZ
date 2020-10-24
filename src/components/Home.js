@@ -1,41 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Form from "./Form";
 
-function Home({ setFoods, foods, cardStyle}) {
-/*
-  const cardStyle = {
-    textDecoration: 'none',
-    width: '200px'
-  }
- */
-  
- // const [foods, setFoods] = useState([]);
+function Home({setFoods}) {
 
-const [mealType, setMealType] = useState('breakfast')
-const [query, setQuery] = useState('')
+  const [mealType, setMealType] = useState("breakfast");
 
   const searchType = (e) => {
-    console.log(foods)
     setMealType(e.target.dataset.type);
 
   };
 
   const fetchFoods = async () => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?type=${mealType}&apiKey=70671307c3744680a714e6bb1f1ef888`);
+    const data = await fetch(
+      //`https://api.spoonacular.com/recipes/complexSearch?type=${mealType}&apiKey=70671307c3744680a714e6bb1f1ef888`
+      `https://api.spoonacular.com/recipes/complexSearch?type=${mealType}&apiKey=579fa834feda4f31839cab3ab97f179d`
+      );
     const foods = await data.json();
     setFoods(foods.results);
   };
-
-  const fetchQuery = async () => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=70671307c3744680a714e6bb1f1ef888`);
-    const foods = await data.json();
-    setFoods(foods.results);
-  };
-
-  useEffect(() => {
-    fetchQuery();
-  }, [query]);
 
   useEffect(() => {
     fetchFoods();
@@ -45,7 +27,6 @@ const [query, setQuery] = useState('')
     //    MEAL TYPES
     <div className="home">
     <div className="container">
-    <Form setQuery={setQuery} fetchQuery={fetchQuery} />
     <div className="meal-type-container">
         <div className="meal-type-card" data-type="main course" onClick={searchType} >
           <img src={"./img/main-course.jpg"} alt="" />
@@ -146,7 +127,7 @@ const [query, setQuery] = useState('')
         </div>
 
       </div>
-
+{/*
       <div className="food-container">
         {foods.map((food) => (
           <Link to={`/${food.id}`} style={cardStyle}>
@@ -156,9 +137,9 @@ const [query, setQuery] = useState('')
             </div>
           </Link>
         ))}
-      </div>
+      </div> */}
     </div>
-      
+     
     </div>
   );
 }

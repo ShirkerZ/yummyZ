@@ -1,37 +1,41 @@
-.food-container {
+.food {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    //grid-gap: 1rem 0;
-    //padding-right: 3rem;
-    width: 90vw;
-    .food-card {
-        //padding-right: 3rem;
+    grid-template-columns: 5vw 1fr 5vw;
+    overflow: hidden;
+    .food-container {
+        grid-column: 2/3;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 340px;
-        height: 120px;
-        border-radius: 2px;
-        overflow: hidden;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, .10);
-        transition: background .5s ease;
-        &:hover {
-            background: #BFDCAE;
-        }
-        img {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        width: 90vw;
+        .food-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 340px;
             height: 120px;
-            padding: .3rem;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-            //color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: .9rem;
-            padding: 0 1rem;
-            transition: all .5s ease;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, .10);
+            transition: background .5s ease;
+            &:hover {
+                background: #BFDCAE;
+            }
+            img {
+                height: 120px;
+                padding: .3rem;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+                color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .9rem;
+                padding: 0 1rem;
+                transition: all .5s ease;
+            }
         }
     }
 }

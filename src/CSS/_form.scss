@@ -1,8 +1,13 @@
 .form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    overflow: hidden;
     form {
+        grid-column: 2/3;
         display: flex;
         align-items: center;
-        height: 5vh;
+        height: 7vh;
         margin-top: 1rem;
         .input {
             input {

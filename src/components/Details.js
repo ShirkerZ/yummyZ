@@ -19,8 +19,8 @@ function Details({ match }) {
 
     const fetchRecipe = async() => {
         const data = await fetch(
-            `https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=70671307c3744680a714e6bb1f1ef888&includeNutrition=true`
-            //`https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=579fa834feda4f31839cab3ab97f179d&includeNutrition=true`
+            //`https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=70671307c3744680a714e6bb1f1ef888&includeNutrition=true`
+            `https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=579fa834feda4f31839cab3ab97f179d&includeNutrition=true`
         );
         const details = await data.json();
         console.log(details);

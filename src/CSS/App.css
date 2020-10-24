@@ -218,14 +218,26 @@ nav .mobile-nav ul li .link:hover::after {
   }
 }
 
+.form {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  overflow: hidden;
+}
+
 .form form {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 5vh;
+  height: 7vh;
   margin-top: 1rem;
 }
 
@@ -598,7 +610,19 @@ nav .mobile-nav ul li .link:hover::after {
   }
 }
 
-.food-container {
+.food {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5vw 1fr 5vw;
+      grid-template-columns: 5vw 1fr 5vw;
+  overflow: hidden;
+}
+
+.food .food-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
@@ -606,7 +630,7 @@ nav .mobile-nav ul li .link:hover::after {
   width: 90vw;
 }
 
-.food-container .food-card {
+.food .food-container .food-card {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -621,11 +645,11 @@ nav .mobile-nav ul li .link:hover::after {
   transition: background .5s ease;
 }
 
-.food-container .food-card:hover {
+.food .food-container .food-card:hover {
   background: #BFDCAE;
 }
 
-.food-container .food-card img {
+.food .food-container .food-card img {
   height: 120px;
   padding: .3rem;
   border-radius: 8px;
@@ -633,8 +657,9 @@ nav .mobile-nav ul li .link:hover::after {
      object-fit: cover;
 }
 
-.food-container .food-card h3 {
+.food .food-container .food-card h3 {
   font-family: 'Montserrat', sans-serif;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -703,7 +728,7 @@ nav .mobile-nav ul li .link:hover::after {
   width: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  top: 30vh;
+  top: 40vh;
   right: -25vw;
 }
 

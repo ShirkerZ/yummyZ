@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Cuisines({setFoods, foods, cardStyle  }) {
+function Cuisines({ setFoods }) {
 
   const [cuisine, setCuisine] = useState("italian");
 
@@ -12,8 +12,8 @@ function Cuisines({setFoods, foods, cardStyle  }) {
 
   const fetchCuisines = async () => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&apiKey=70671307c3744680a714e6bb1f1ef888`
-      //`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&apiKey=579fa834feda4f31839cab3ab97f179d`
+      //`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&apiKey=70671307c3744680a714e6bb1f1ef888`
+      `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&apiKey=579fa834feda4f31839cab3ab97f179d`
     );
     const foods = await data.json();
     console.log(foods);
@@ -115,7 +115,7 @@ function Cuisines({setFoods, foods, cardStyle  }) {
               </div>
 
             </div>
-
+{/* 
             <div className="food-container">
               {foods.map((food) => (
                 <Link to={`/${food.id}`} style={cardStyle}>
@@ -126,7 +126,7 @@ function Cuisines({setFoods, foods, cardStyle  }) {
                 </Link>
               ))}
             </div>
-
+*/}
         </div>   
     </div>
     );
